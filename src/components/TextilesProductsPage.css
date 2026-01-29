@@ -1,0 +1,99 @@
+/* --- Textile Page Container --- */
+.textile-products-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #1b1b1b, #2e2e2e);
+  font-family: 'Merriweather', serif;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.textile-products-container h1 {
+  font-size: 42px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #d4af37, #f5d76e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Textile-Specific Grid Layout --- */
+.textile-products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Textile Product Card --- */
+.textile-product-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.textile-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.textile-product-card img {
+  width: 100%;
+  max-width: 320px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s ease-in-out;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.textile-product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Buy Button (Textile-Specific) --- */
+.textile-buy-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #b8860b, #ffcc33);
+  color: black;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.textile-buy-button:hover {
+  box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+/* --- Responsive Fixes --- */
+@media (max-width: 992px) {
+  .textile-products-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .textile-products-container h1 {
+    font-size: 32px;
+  }
+}

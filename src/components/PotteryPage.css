@@ -1,0 +1,175 @@
+/* Define a modern, premium color palette */
+:root {
+  --primary-color: #0077b6;
+  --primary-dark: #005f87;
+  --text-dark: #222;
+  --text-light: #555;
+  --background-light: #f9f9fb;
+  --card-bg: #ffffff;
+  --accent-color: #ff4d6d;
+  --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+  --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* Main grid container */
+.pottery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts to fit 3 columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--background-light);
+}
+
+/* Individual product card */
+.pottery-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+/* Hover effect - Gradient Border */
+.pottery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border: 2px solid transparent;
+  background: linear-gradient(to bottom, var(--card-bg), rgba(0, 119, 182, 0.1));
+  animation: pulse-shadow 1.5s infinite;
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Image styling */
+.image-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.pottery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+  filter: brightness(95%);
+}
+
+.pottery-card:hover .pottery-image {
+  transform: scale(1.08);
+  filter: brightness(100%);
+}
+
+/* Content section */
+.card-content {
+  padding: 15px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 10px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  transition: var(--transition-smooth);
+}
+
+.pottery-card:hover p {
+  color: var(--text-dark);
+}
+
+/* Price styling */
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(255, 77, 109, 0.3);
+}
+
+/* Buy Button */
+.buy-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 119, 182, 0.3);
+}
+
+/* Button Hover Effect - Subtle Glow */
+.buy-button:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 95, 135, 0.5);
+}
+
+/* Button Glow Effect */
+.buy-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.buy-button:hover::after {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .pottery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pottery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image-container {
+    height: 160px;
+  }
+}

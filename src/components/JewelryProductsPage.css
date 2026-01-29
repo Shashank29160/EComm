@@ -1,0 +1,155 @@
+/* --- Elegant Jewelry Products Page Styling --- */
+.jewelry-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  font-family: "Playfair Display", serif;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* --- Luxurious Title Styling --- */
+.jewelry-container h1 {
+  font-size: 42px;
+  font-weight: 900;
+  color: #ffdd95;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 8px;
+  text-shadow: 2px 2px 15px rgba(255, 221, 149, 0.5);
+}
+
+.jewelry-container h1::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #ffcc29;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+/* --- 2x2 Grid Layout for Jewelry Products --- */
+.products-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 items per row */
+  gap: 40px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch;
+}
+
+
+
+/* --- Jewelry Card Design --- */
+.product-card {
+  .product-card {
+    width: 100%; /* Ensures it doesn't shrink */
+    max-width: 500px; /* Prevents it from getting too wide */
+    text-align: center;
+  }  
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  border: 2px solid rgba(255, 221, 149, 0.3);
+  box-shadow: 0 10px 25px rgba(255, 221, 149, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Luxury Glow on Hover --- */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 221, 149, 0.5);
+}
+
+/* --- Jewelry Image Styling --- */
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  border-radius: 15px;
+  transition: transform 0.4s ease-in-out;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* --- Sophisticated Product Name --- */
+.product-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 10px 0;
+  color: #ffdd95;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Modern Product Description --- */
+.product-card p {
+  font-size: 16px;
+  color: #ddd;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* --- Premium Price Styling --- */
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffcc29;
+  margin-top: 8px;
+}
+
+/* --- Buy Button --- */
+.buy-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #ffb703, #ff8800);
+  color: #1a1a2e;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+}
+
+.buy-button:hover {
+  box-shadow: 0px 5px 20px rgba(255, 204, 41, 0.5);
+  transform: translateY(-3px);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 column on smaller screens */
+  }
+}
+
+  .buy-button {
+    padding: 10px 24px;
+    font-size: 15px;
+  }
+
+@media (max-width: 500px) {
+  .jewelry-container h1 {
+    font-size: 32px;
+  }
+
+  .buy-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
